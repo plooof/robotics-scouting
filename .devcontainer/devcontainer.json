@@ -1,0 +1,29 @@
+{
+	"name": "Next.js Development Environment",
+	"context": "..",
+	"dockerFile": "Dockerfile", 
+	"appPort": 3000,
+	"runArgs": [
+	  "--env", "NODE_ENV=development"
+	],
+	"postCreateCommand": "npm install",  
+	"settings": {
+	  "terminal.integrated.shell.linux": "/bin/bash",
+	  "editor.formatOnSave": true
+	},
+	"mounts": [
+	  "source=${localWorkspaceFolder},target=/app,type=bind"
+	],
+	"remoteUser": "node",
+	"extensions": [
+	  "dbaeumer.vscode-eslint",
+	  "esbenp.prettier-vscode",
+	  "ms-vscode.vscode-typescript-tslint-plugin"
+	],
+	"forwardPorts": [
+	  3000
+	],
+	"workspaceFolder": "/app",
+	"startCommand": "npm run dev"
+  }
+  
